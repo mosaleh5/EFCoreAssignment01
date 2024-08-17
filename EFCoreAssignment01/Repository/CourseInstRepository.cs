@@ -32,6 +32,10 @@ namespace EFCoreAssignment01.Repository
                 Console.WriteLine(ex.Message);
 
             }
+            finally
+            {
+                iTIDbContext?.Dispose();
+            }
         }
 
 
@@ -51,6 +55,10 @@ namespace EFCoreAssignment01.Repository
             {
                 Console.WriteLine(ex.Message);
 
+            }
+            finally
+            {
+                iTIDbContext?.Dispose();
             }
         }
     }
