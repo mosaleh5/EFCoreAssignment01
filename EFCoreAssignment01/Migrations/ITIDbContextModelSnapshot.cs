@@ -129,7 +129,7 @@ namespace EFCoreAssignment01.Migrations
                         .HasDefaultValue(0m)
                         .HasColumnName("BounsAmount");
 
-                    b.Property<int?>("DepartmentId")
+                    b.Property<int?>("Dept_Id")
                         .HasColumnType("int");
 
                     b.Property<decimal>("HoureRate")
@@ -147,7 +147,7 @@ namespace EFCoreAssignment01.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId");
+                    b.HasIndex("Dept_Id");
 
                     b.HasIndex("Id");
 
@@ -267,9 +267,12 @@ namespace EFCoreAssignment01.Migrations
 
             modelBuilder.Entity("EFCoreAssignment01.Entities.Instructor", b =>
                 {
-                    b.HasOne("EFCoreAssignment01.Entities.Department", null)
+                    b.HasOne("EFCoreAssignment01.Entities.Department", "Department")
                         .WithMany("Instructors")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("Dept_Id")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("EFCoreAssignment01.Entities.StudCourse", b =>

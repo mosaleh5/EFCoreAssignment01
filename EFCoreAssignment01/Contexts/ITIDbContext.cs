@@ -26,11 +26,11 @@ namespace EFCoreAssignment01.Contexts
                         .WithOne(x => x.Course)
                         .HasForeignKey<Course>(x=>x.Top_Id);
 
-            /*            modelBuilder.Entity<Instructor>()
-                                    .HasOne(x => x.Department)
-                                    .WithMany(x => x.Instructors)
-                                    .HasForeignKey(x => x.Dept_Id)
-                                    .OnDelete(DeleteBehavior.NoAction);*/
+            modelBuilder.Entity<Instructor>()
+                        .HasOne(x => x.Department)
+                        .WithMany(x => x.Instructors)
+                        .HasForeignKey(x => x.Dept_Id)
+                        .OnDelete(DeleteBehavior.NoAction);
 
             modelBuilder.Entity<Department>()
                         .HasOne(x => x.Manager)
@@ -60,7 +60,6 @@ namespace EFCoreAssignment01.Contexts
                         .HasOne(x=>x.Department)
                         .WithMany(x=>x.students)
                         .HasForeignKey(x=>x.Dep_id);
-
 
 
 
