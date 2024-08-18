@@ -19,8 +19,8 @@ namespace EFCoreAssignment01.Configuration
                    .IsRequired()
                    .HasMaxLength(50)
                    .HasColumnType("varchar(50)");
-            builder.Property(x => x.InsId)
-                   .HasDefaultValue(0);
+        /*    builder.Property(x => x.InsManagerId)
+                   .HasDefaultValue(0);*/
 
             builder.Property(x => x.HiringDate)
                    .HasDefaultValueSql("GETDATE()");

@@ -14,7 +14,7 @@ namespace EFCoreAssignment01.Configuration
         public void Configure(EntityTypeBuilder<Instructor> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).UseIdentityColumn(1,1);
+            builder.Property(x => x.Id).UseIdentityColumn(1, 1);
             builder.HasIndex(x => x.Id);
             builder.Property(x => x.Name)
                     .IsRequired()
@@ -24,20 +24,20 @@ namespace EFCoreAssignment01.Configuration
                     .HasColumnType("decimal")
                     .HasMaxLength(18)
                     .HasDefaultValue(0)
-                    .HasPrecision(18,2)
+                    .HasPrecision(18, 2)
                     .HasColumnName("BounsAmount");
             builder.Property(x => x.Salary).IsRequired();
-            builder.Property(x=> x.Address).HasMaxLength(200)
+            builder.Property(x => x.Address).HasMaxLength(200)
                     .HasColumnType("varchar(200)");
 
 
             builder.Property(x => x.HoureRate).IsRequired()
-                    .HasPrecision(9 ,2)
+                    .HasPrecision(9, 2)
                     .HasColumnType("decimal(9, 2)");
 
 
 
-            builder.Property(x=>x.Dept_Id).IsRequired();
+
         }
     }
 }

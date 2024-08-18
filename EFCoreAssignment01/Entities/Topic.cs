@@ -18,5 +18,6 @@ namespace EFCoreAssignment01.Entities
         [Column(TypeName ="varchar(50)")]
         [MinLength(3)]
         public string Name { get; set; }
+        public Course Course { get; set; }
     }
 }

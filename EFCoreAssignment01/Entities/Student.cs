@@ -13,6 +13,10 @@ namespace EFCoreAssignment01.Entities
         public string LName { get; set; }
         public String Address { get; set; }
         public int Age { get; set; }
-        public int Dep_id { get; set; }
+       
+        public Department? Department { get; set; }
+        public int? Dep_id { get; set; }
+        public List<StudCourse> StudCourses { get; set; }
+
     }
 }

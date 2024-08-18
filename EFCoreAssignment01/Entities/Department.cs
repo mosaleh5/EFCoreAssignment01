@@ -11,8 +11,13 @@ namespace EFCoreAssignment01.Entities
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public int InsId { get; set; }
         public DateTime HiringDate { get; set; }
+
+        public Instructor? Manager { get; set; }
+        public int? InsManagerId { get; set; }
+
+        public List<Instructor> Instructors { get; set; }
+        public List<Student> students { get; set; }
 
     }
 }

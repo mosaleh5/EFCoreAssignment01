@@ -24,7 +24,10 @@ namespace EFCoreAssignment01.Entities
         public string Description { get; set; }
         [DataType(DataType.Duration)]
         public int Duration { get; set; }
+        public Topic Topic { get; set; }
+        public int Top_Id { get; set; }
 
-        public int Top_ID { get; set; }
+       public List<StudCourse> StudCourses { get; set; }
+        public List<CourseInst> CourseInsts { get; set; }
     }
 }
